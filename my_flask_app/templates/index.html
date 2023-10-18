@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Frontend</title>
+</head>
+<body>
+    <h1>API Frontend</h1>
+    
+    <!-- Display data from the API -->
+    <div id="data-container">
+        <h2>API Data:</h2>
+        <pre>{{ data | tojson(indent=2) }}</pre>
+    </div>
+
+    <!-- Form to add data -->
+    <h2>Add Data</h2>
+    <form method="POST" action="/api/data">
+        <input type="text" name="new-data" placeholder="Enter data">
+        <button type="submit">Add Data</button>
+    </form>
+
+    <!-- Form to delete data by index -->
+    <h2>Delete Data</h2>
+    <form method="POST" action="/api/data/delete">
+        <input type="number" name="delete-index" placeholder="Enter index to delete">
+        <button type="submit">Delete Data</button>
+    </form>
+</body>
+</html>
